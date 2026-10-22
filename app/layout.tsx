@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Anton } from 'next/font/google';
+import SiteFooter from '@/components/layout/SiteFooter';
+import SiteHeader from '@/components/layout/SiteHeader';
 import './globals.css';
 
 const anton = Anton({
@@ -17,7 +19,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={anton.variable}>{children}</body>
+      <body className={anton.variable}>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }
