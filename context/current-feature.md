@@ -2,42 +2,41 @@
 
 <!-- Feature Name -->
 
-Create Home Page
+Create the Menu Page
 
 ## Status
 
 <!-- Not Started|In Progress|Completed -->
 
-Completed
+In Progress
 
 ## Goals
 
 <!-- Goals & requirements -->
 
-- Build the Square Deli home page to match the mockups:
-  - `context/sceenshots/homepage/home-top.png`
-  - `context/sceenshots/homepage/home-middle.png`
-  - `context/sceenshots/homepage/home-bottom.png`
-- Follow the project brief: warm neutral palette, orange accent, mobile-first layout.
-- Replace the placeholder hero image and menu card gradients with real imagery.
-- Verify the page in the browser at mobile and desktop widths.
+- Build the menu page at `/menu`, matching the mockups:
+  - `context/sceenshots/menu/menu-top.png`
+  - `context/sceenshots/menu/menu-middle.png`
+  - `context/sceenshots/menu/menu-bottom.png`
+- Take all items, descriptions and prices from `public/menu.json`.
+- Show each sandwich's photo from `public/images/sandwiches/`.
+- Sandwiches as cards; every other category as a price list.
+- Share the site header and footer between the home and menu pages.
+- Unique page title and meta description.
 - `npm run build` passes with no errors.
 
 ## Notes
 
 <!-- Any extra notes -->
 
-- Branch: `feature/home-page`. Nothing is committed yet; the whole project is still untracked.
-- Spec: `context/features/home-page.md`.
-- The screenshots folder is spelled `context/sceenshots/`, while the feature spec and `context/README.md` refer to `context/screenshots/`. One of them needs to change.
-- The current `app/page.tsx` is a first-pass scaffold and has not been compared against the mockups.
-- The header nav links to in-page anchors (`#menu`, `#story`, `#visit`); the Menu, Our Story and Visit Us pages do not exist yet.
+- Branch: `feature/menu-page`.
+- Spec: `context/features/menu-page.md`.
+- `public/menu.json` is the source of truth. Where the mockups show different items or prices, the JSON wins.
+- The mockups show no photos; sandwich photos were added because the spec asks for `public/images/`.
 
 ## History
 
 <!-- Keep this updated. Earliest to latest -->
 
-- 2026-10-07: Created the `feature/home-page` branch and scaffolded the Next.js, TypeScript and Tailwind project in the repo root.
-- 2026-10-07: Added the first-pass home page (`app/page.tsx`, `app/layout.tsx`, `app/globals.css`): header, hero, sandwiches section, Our Story, highlight cards, Visit Us band, footer and LocalBusiness JSON-LD.
-- 2026-10-08: Slimmed the hero heading, replaced "Open today" with the posted hours (Mon – Sat 10:30am – 9:00pm, Sunday closed), reworked the popular items cards without prices, and added a "View the full menu" button linking to `/menu`.
-- 2026-10-08: Build passed. Merged to `main` and pushed to GitHub.
+- 2026-10-08: Created the `feature/menu-page` branch and documented the feature.
+- 2026-10-08: Built `/menu` (`app/menu/page.tsx`, `components/menu/`, `lib/menu.ts`, `types/menu.ts`). Moved the header and footer into `components/layout/` and `app/layout.tsx` so both pages share them. Build passes; not yet reviewed in a browser or committed.

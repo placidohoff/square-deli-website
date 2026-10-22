@@ -61,7 +61,7 @@
     {
       "id": 8,
       "name": "Turkey n Cheese",
-      "image": "turkey-n-cheese.jpg",
+      "image": "turkey_cheese.jpg",
       "description": "American cheese, lettuce, tomatoes, onions, mayonnaise",
       "prices": {
         "large": 10.99,

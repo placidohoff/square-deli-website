@@ -1,7 +1,9 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 type FeaturedItem = {
   name: string;
+  image: string;
   description: string;
   price?: string;
   prices?: Record<string, string>;
@@ -10,21 +12,25 @@ type FeaturedItem = {
 const featuredItems: FeaturedItem[] = [
   {
     name: 'Chopped Cheese',
+    image: '/images/sandwiches/chopped.png',
     price: '$10.99',
     description: 'American yellow cheese, lettuce, tomatoes, grilled onions, chili sauce',
   },
   {
     name: 'Chicken Wings & Tenders',
+    image: '/images/wings.png',
     prices: {'6pc': '$8.99', '12pc': '$14.99', '1lb of tenders': '$8.99'},
     description: 'Enjoy golden-fried, juicy wings or tenders cooked to perfection and served hot with a variety of flavorful sauces.',
   },
   {
     name: 'N.Y. Style Pizza',
+    image: '/images/sandwiches/pizza.png',
     prices: {slice: '$2.99', pie: '$22.99'},
     description: 'Thin, foldable crust, a flavorful tomato sauce, and perfectly melted cheese.',
   },
   {
     name: 'Steak n Cheese',
+    image: '/images/sandwiches/steak-n-cheese.png',
     price: '$12.99',
     description: '1/2 pound of shaved steak, provolone cheese, grilled onions, peppers',
   },
@@ -75,32 +81,6 @@ export default function HomePage() {
       />
 
       <main className="bg-brand-cream text-brand-ink">
-        <header className="sticky top-0 z-40 border-b border-brand-border/80 bg-brand-cream/90 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
-            <a href="#top" className="brand-font text-3xl tracking-tight text-brand-mauve sm:text-4xl">
-              Square Deli
-            </a>
-
-            <nav aria-label="Main navigation" className="hidden items-center gap-6 text-sm font-medium md:flex">
-              <a href="#menu" className="transition hover:text-brand-orange">
-                Menu
-              </a>
-              <a href="#story" className="transition hover:text-brand-orange">
-                Our Story
-              </a>
-              <a href="#visit" className="transition hover:text-brand-orange">
-                Visit Us
-              </a>
-              <a
-                href="tel:4012510121"
-                className="inline-flex items-center rounded-md bg-brand-orange px-4 py-2 font-semibold text-white transition hover:bg-brand-orange-dark"
-              >
-                Call to Order
-              </a>
-            </nav>
-          </div>
-        </header>
-
         <section id="top" className="mx-auto max-w-6xl px-5 pb-10 pt-10 sm:px-8 lg:px-10 lg:pb-16 lg:pt-16">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
             <div>
@@ -192,7 +172,15 @@ export default function HomePage() {
                 key={item.name}
                 className="rounded-lg border border-brand-border bg-white/60 p-4 shadow-[0_8px_25px_rgba(28,25,23,0.02)]"
               >
-                <div className="mb-4 h-40 rounded-md bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.2),rgba(0,0,0,0.04)),linear-gradient(135deg,#e7d9c8,#f3efe9)]" aria-hidden="true" />
+                <div className="relative mb-4 h-40 overflow-hidden rounded-md bg-brand-card">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
                 <h3 className="text-2xl font-bold text-brand-ink">{item.name}</h3>
                 <p className="mt-3 text-base leading-6 text-brand-muted">{item.description}</p>
               </article>
@@ -284,18 +272,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        <footer className="border-t border-brand-border bg-brand-cream">
-          <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-5 text-sm text-brand-muted sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
-            <div className="brand-font text-3xl text-brand-mauve">Square Deli</div>
-            <div className="flex items-center gap-3">
-              <span>Made for the neighborhood.</span>
-              <a href="tel:4012510121" className="font-semibold text-brand-orange">
-                Call us
-              </a>
-            </div>
-          </div>
-        </footer>
       </main>
     </>
   );
