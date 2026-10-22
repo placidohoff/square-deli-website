@@ -39,3 +39,14 @@ Mockup References:
 
 # SEO Tag Optimization
 ## Goals
+
+
+
+# Hosting
+## Goals
+Have the website hosted on render.
+
+
+# Mobile Menu
+## Goals
+There is no menu on mobile screens. Please include a sticky menu for mobile.
