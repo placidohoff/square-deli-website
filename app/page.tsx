@@ -88,9 +88,9 @@ export default function HomePage() {
                 Providence, Rhode Island
               </p>
 
-              <h1 className="text-balance text-5xl font-bold leading-[0.9] tracking-[-0.04em] text-brand-ink sm:text-6xl lg:text-7xl">
-                <span className="block">Good food.</span>
-                <span className="block text-brand-orange">Good neighbors.</span>
+              <h1 className="text-balance text-5xl font-bold leading-[0.9] tracking-[-0.04em] text-brand-ink sm:text-6xl lg:text-6xl">
+                <span className="block">Come hungry.</span>
+                <span className="block text-brand-orange">Leave happy.</span>
               </h1>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-brand-muted">
