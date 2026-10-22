@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import MobileMenu from './MobileMenu';
+import { navLinks, phoneHref } from './navLinks';
 
 export default function SiteHeader() {
   return (
@@ -9,22 +11,20 @@ export default function SiteHeader() {
         </Link>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-6 text-sm font-medium md:flex">
-          <Link href="/menu" className="transition hover:text-brand-orange">
-            Menu
-          </Link>
-          <Link href="/#story" className="transition hover:text-brand-orange">
-            Our Story
-          </Link>
-          <Link href="/#visit" className="transition hover:text-brand-orange">
-            Visit Us
-          </Link>
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="transition hover:text-brand-orange">
+              {link.label}
+            </Link>
+          ))}
           <a
-            href="tel:4012510121"
+            href={phoneHref}
             className="inline-flex items-center rounded-md bg-brand-orange px-4 py-2 font-semibold text-white transition hover:bg-brand-orange-dark"
           >
             Call to Order
           </a>
         </nav>
+
+        <MobileMenu />
       </div>
     </header>
   );
