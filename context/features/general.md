@@ -50,3 +50,11 @@ Have the website hosted on render.
 # Mobile Menu
 ## Goals
 There is no menu on mobile screens. Please include a sticky menu for mobile.
+
+
+# Visit Us Page
+## Goals
+Create the visit-us page. Mockup references below:
+    Mockup References:
+        context/screenshots/visit-us/visit-top.png
+        context/screenshots/visit-us/visit-bottom.png

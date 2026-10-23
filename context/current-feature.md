@@ -2,26 +2,25 @@
 
 <!-- Feature Name -->
 
-Create the Menu Page
+Create the Visit Us Page
 
 ## Status
 
 <!-- Not Started|In Progress|Completed -->
 
-In Progress
+Completed
 
 ## Goals
 
 <!-- Goals & requirements -->
 
-- Build the menu page at `/menu`, matching the mockups:
-  - `context/sceenshots/menu/menu-top.png`
-  - `context/sceenshots/menu/menu-middle.png`
-  - `context/sceenshots/menu/menu-bottom.png`
-- Take all items, descriptions and prices from `public/menu.json`.
-- Show each sandwich's photo from `public/images/sandwiches/`.
-- Sandwiches as cards; every other category as a price list.
-- Share the site header and footer between the home and menu pages.
+- Build the visit-us page at `/visit-us`, matching the mockups:
+  - `context/screenshots/visit-us/visit-top.png`
+  - `context/screenshots/visit-us/visit-bottom.png`
+- "Find us" hero with a map and a call-to-order button.
+- Address with a "Get directions" link, and a full weekly hours table.
+- "Good to know" band at the bottom.
+- Point the header's "Visit Us" link at the new page.
 - Unique page title and meta description.
 - `npm run build` passes with no errors.
 
@@ -29,10 +28,10 @@ In Progress
 
 <!-- Any extra notes -->
 
-- Branch: `feature/menu-page`.
-- Spec: `context/features/menu-page.md`.
-- `public/menu.json` is the source of truth. Where the mockups show different items or prices, the JSON wins.
-- The mockups show no photos; sandwich photos were added because the spec asks for `public/images/`.
+- Branch: `feature/visit-us`.
+- Spec: `context/features/visit-us.md`.
+- Hours follow `context/project-overview.md` (10:30am–9:00pm, closed Sunday). The mockup shows Friday and Saturday until 10:00pm; the spec wins.
+- The mockup shows a drawn map. The project overview asks for an embedded map, so the page uses a Google Maps embed (no API key needed).
 
 ## History
 
@@ -40,3 +39,7 @@ In Progress
 
 - 2026-10-08: Created the `feature/menu-page` branch and documented the feature.
 - 2026-10-08: Built `/menu` (`app/menu/page.tsx`, `components/menu/`, `lib/menu.ts`, `types/menu.ts`). Moved the header and footer into `components/layout/` and `app/layout.tsx` so both pages share them. Build passes; not yet reviewed in a browser or committed.
+- 2026-10-22: Merged the menu page, the new hero headline, and the mobile menu (`feature/mobile-menu`) into `main`.
+- 2026-10-23: Created the `feature/visit-us` branch and documented the feature.
+- 2026-10-23: Built `/visit-us` (`app/visit-us/page.tsx`, `components/visit/HoursTable.tsx`). Header "Visit Us" now links to `/visit-us`. Added `brand-rust` (#B9490A) to the theme for the "Closed" label. Build passes; not yet reviewed in a browser or committed.
+- 2026-10-23: Merged `feature/visit-us` into `main` and pushed.
