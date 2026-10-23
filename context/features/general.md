@@ -44,7 +44,7 @@ Mockup References:
 
 # Hosting
 ## Goals
-Have the website hosted on render.
+Have the website hosted on render.com. 
 
 
 # Mobile Menu
