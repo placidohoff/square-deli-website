@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: square-deli-website
+    name: square-deli-ex1
     runtime: node
     plan: free
     branch: main
