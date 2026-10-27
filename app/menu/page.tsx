@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import MenuJumpToggle from '@/components/menu/MenuJumpToggle';
 import MenuSection from '@/components/menu/MenuSection';
 import SandwichCard from '@/components/menu/SandwichCard';
 import { menu } from '@/lib/menu';
@@ -42,12 +43,17 @@ const EXTRA_SECTIONS: MenuSectionConfig[] = [
   { key: 'desserts', eyebrow: 'Something sweet', title: 'Desserts' },
 ];
 
+const JUMP_TARGETS = [
+  { id: 'sandwiches', label: 'Sandwiches' },
+  { id: 'more-food', label: 'More food' },
+];
+
 export default function MenuPage() {
   return (
     <main className="bg-brand-cream text-brand-ink">
       <h1 className="sr-only">Square Deli menu</h1>
 
-      <section className="mx-auto max-w-6xl px-5 pb-14 pt-10 sm:px-8 lg:px-10 lg:pb-20 lg:pt-14">
+      <section id="sandwiches" className="mx-auto max-w-6xl scroll-mt-20 px-5 pb-14 pt-10 sm:px-8 lg:px-10 lg:pb-20 lg:pt-14">
         <div className="mb-8 flex items-end justify-between gap-6">
           <div>
             <p className="mb-2 text-[0.72rem] font-bold uppercase tracking-[0.12em] text-brand-orange">
@@ -71,7 +77,7 @@ export default function MenuPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-5 pb-14 sm:px-8 lg:px-10 lg:pb-20">
+      <div id="more-food" className="mx-auto max-w-6xl scroll-mt-20 px-5 pb-14 sm:px-8 lg:px-10 lg:pb-20">
         <div className="grid gap-x-14 gap-y-14 md:grid-cols-2">
           {MAIN_SECTIONS.map(({ key, ...section }) => (
             <MenuSection key={key} items={menu[key]} {...section} />
@@ -86,6 +92,8 @@ export default function MenuPage() {
           ))}
         </div>
       </div>
+
+      <MenuJumpToggle targets={JUMP_TARGETS} />
 
       <section className="bg-brand-dark text-white">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:px-10 lg:py-20">

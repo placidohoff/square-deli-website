@@ -58,3 +58,10 @@ Create the visit-us page. Mockup references below:
     Mockup References:
         context/screenshots/visit-us/visit-top.png
         context/screenshots/visit-us/visit-bottom.png
+
+
+
+
+# Mobile Menu Screen Toggle
+## Goals
+For mobile screen viewing the /menu page, I would like a toggle option, or fixed buttons that will scroll the user to the sandwiches section or the more food section respectively.
